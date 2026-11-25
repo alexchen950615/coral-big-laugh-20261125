@@ -4,6 +4,7 @@ ENTRY = "I hired a life coach who quit after one session, saying my five-year pl
 
 
 def main():
+    assert 1 <= len(ENTRY) <= 200 and "\n" not in ENTRY, "entry must be a single line of 1-200 characters"
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as f:
